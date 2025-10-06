@@ -12,6 +12,7 @@ if command == ".dbinfo":
         database_file.seek(16)  
         page_size = int.from_bytes(database_file.read(2), byteorder="big")
         print(f"database page size: {page_size}")
+        
         database_file.seek(103)
         num_tables = int.from_bytes(database_file.read(2), byteorder="big")
         # print(f"number of tables: {num_tables}")
